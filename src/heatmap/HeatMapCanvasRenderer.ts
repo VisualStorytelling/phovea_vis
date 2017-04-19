@@ -61,10 +61,8 @@ export default class HeatMapCanvasRenderer extends AHeatMapCanvasRenderer implem
   private redrawImpl(imageData: ImageData, $root: d3.Selection<any>, scale: number[]) {
     const context = <CanvasRenderingContext2D>(<any>$root.select('canvas').node()).getContext('2d');
 
-    context.msImageSmoothingEnabled = false;
-    //if (context.hasOwnProperty('imageSmoothingEnabled')) {
+    (<any>context).msImageSmoothingEnabled = false;
     (<any>context).imageSmoothingEnabled = false;
-    //}
 
     if (scale[0] === 1 && scale[1] === 1) {
       //don't nee

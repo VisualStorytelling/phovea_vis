@@ -43,10 +43,8 @@ export default class HeatMapImageRenderer extends AHeatMapCanvasRenderer impleme
     const canvas = <HTMLCanvasElement>$root.select('canvas').node();
     const ctx = <CanvasRenderingContext2D>canvas.getContext('2d');
 
-    ctx.msImageSmoothingEnabled = false;
-    //if (context.hasOwnProperty('imageSmoothingEnabled')) {
+    (<any>ctx).msImageSmoothingEnabled = false;
     (<any>ctx).imageSmoothingEnabled = false;
-    //}
 
     if (scale[0] === 1 && scale[1] === 1) {
       ctx.drawImage(this.image, 0, 0);
