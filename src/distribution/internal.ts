@@ -26,12 +26,12 @@ function createCategoricalHistData(hist: ICatHistogram): IHistData[] {
   const categories: any[] = hist.categories,
     cols = hist.colors || d3.scale.category10().range(),
     total = hist.validCount;
-  let data = [],
-    acc = 0;
+  const data = [];
+  let acc = 0;
   hist.forEach((b, i) => {
     data[i] = {
       v: b,
-      acc: acc,
+      acc,
       ratio: b / total,
       range: hist.range(i),
 
@@ -52,7 +52,7 @@ function createNumericalHistData(hist: IHistogram, range: number[]): IHistData[]
   hist.forEach((b, i) => {
     data[i] = {
       v: b,
-      acc: acc,
+      acc,
       ratio: b / total,
       range: hist.range(i),
 
@@ -91,6 +91,4 @@ export function resolveHistMax(hist: IHistogram, totalHeight: ITotalHeight): Pro
 
 export declare type ITotalHeight = number|boolean|((hist: IHistogram) => number|boolean|Promise<number|boolean>);
 
-export interface IDistributionOptions extends IVisInstanceOptions {
-
-}
+export declare type IDistributionOptions = IVisInstanceOptions;
