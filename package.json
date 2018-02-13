@@ -51,7 +51,7 @@
   },
   "dependencies": {
     "phovea_core": "github:VisualStorytelling/phovea_core#master",
-    "phovea_d3": "github:VisualStorytelling/phovea_d3#develop",
+    "phovea_d3": "github:VisualStorytelling/phovea_d3#stable",
     "@types/d3": "3.5.36",
     "d3": "3.5.17"
   },
